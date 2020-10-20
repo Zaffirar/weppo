@@ -6,13 +6,39 @@ function fibb_rek(n){
 function fibb_iter(n){
     var fib0 = 0;
     var fib1 = 1;
-    var temp;
     while(n--){
-        temp = fib0;
-        fib0 = fib1;
-        fib1 = fib1+temp;
+        fib1 = fib1 + fib0;
+        fib0 = fib1 - fib0;
     }
     return fib0;
 }
-console.log(fibb_rek(17));
-console.log(fibb_iter(17));
+for (let i = 10; i < 46; i++) { //dla n=48 rekurencja liczyła się minutę, zostawiam n<46
+    console.log("Dla n="+i);
+    console.time("Fibonacci Rekurencyjnie");
+    fibb_rek(i);
+    console.timeEnd("Fibonacci Rekurencyjnie");
+    console.log("");
+    console.time("Fibonacci Iteracyjnie");
+    fibb_iter(i);
+    console.timeEnd("Fibonacci Iteracyjnie");
+    console.log(""); 
+}
+/*
+Dla n=45
+Node.js:
+Fibonacci Rekurencyjnie: 10434.259ms
+Fibonacci Iteracyjnie: 0.005ms
+
+Opera:
+Fibonacci Rekurencyjnie: 11195.5087890625 ms
+Fibonacci Iteracyjnie: 0.00390625 ms
+
+Chrome:
+Fibonacci Rekurencyjnie: 11168.624267578125 ms
+Fibonacci Iteracyjnie: 0.005126953125 ms
+
+Edge:
+Fibonacci Rekurencyjnie: 11166.318115234375 ms
+Fibonacci Iteracyjnie: 0.0048828125 ms
+Brak znaczących różnic
+*/
