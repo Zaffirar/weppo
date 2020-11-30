@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <form method="POST">
+        <% if(locals.message) { %>
+        <div>
+            <%= message %>
+        </div>
+        <% } %>
+        <div>
+            Imię: <input type='text' name='imie' value='<%= imie %>' />
+        </div>
+        <div>
+            Nazwisko: <input type='text' name='nazwisko' value='<%= nazwisko %>' />
+        </div>
+        <div>
+            Przedmiot: <input type='text' name='przedmiot' value='<%= przedmiot %>' />
+        </div>
+        <ul>
+            <li>Zadanie 1: <input type="number" name="punktyZaZadanie1" value="<%= punktyZaZadanie1 %>" /></li>
+            <li>Zadanie 2: <input type="number" name="punktyZaZadanie2" value="<%= punktyZaZadanie2 %>" /></li>
+            <li>Zadanie 3: <input type="number" name="punktyZaZadanie3" value="<%= punktyZaZadanie3 %>" /></li>
+            <li>Zadanie 4: <input type="number" name="punktyZaZadanie4" value="<%= punktyZaZadanie4 %>" /></li>
+            <li>Zadanie 5: <input type="number" name="punktyZaZadanie5" value="<%= punktyZaZadanie5 %>" /></li>
+            <li>Zadanie 6: <input type="number" name="punktyZaZadanie6" value="<%= punktyZaZadanie6 %>" /></li>
+            <li>Zadanie 7: <input type="number" name="punktyZaZadanie7" value="<%= punktyZaZadanie7 %>" /></li>
+            <li>Zadanie 8: <input type="number" name="punktyZaZadanie8" value="<%= punktyZaZadanie8 %>" /></li>
+            <li>Zadanie 9: <input type="number" name="punktyZaZadanie9" value="<%= punktyZaZadanie9 %>" /></li>
+            <li>Zadanie 10: <input type="number" name="punktyZaZadanie10" value="<%= punktyZaZadanie10 %>" /></li>
+        </ul>
+        <button>Zapisz</button>
+    </form>
+</body>
+
+</html>
