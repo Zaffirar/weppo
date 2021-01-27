@@ -1,0 +1,47 @@
+DROP TABLE IF EXISTS OSOBA;
+GO
+
+CREATE TABLE OSOBA (
+	ID int PRIMARY KEY,
+	FirstName [nvarchar](150) NOT NULL,
+	LastName [nvarchar](150) NOT NULL,
+	);
+GO
+
+DROP SEQUENCE IF EXISTS SEKWENCJA;
+GO
+
+CREATE SEQUENCE SEKWENCJA
+	INCREMENT BY 1
+    START WITH 0;
+GO
+
+
+INSERT INTO OSOBA(ID, FirstName, LastName) VALUES(NEXT VALUE FOR SEKWENCJA, 'Bo¿ydar', 'Kowalski');
+INSERT INTO OSOBA(ID, FirstName, LastName) VALUES(NEXT VALUE FOR SEKWENCJA, 'Jan', 'Malinowski');
+INSERT INTO OSOBA(ID, FirstName, LastName) VALUES(NEXT VALUE FOR SEKWENCJA, 'Adrian', 'Czuchaj');
+GO
+
+SELECT * FROM OSOBA
+GO
+
+DROP TABLE IF EXISTS OSOBA;
+GO
+
+CREATE TABLE OSOBA (
+	ID int IDENTITY(0,1) PRIMARY KEY,
+	FirstName [nvarchar](150) NOT NULL,
+	LastName [nvarchar](150) NOT NULL,
+	);
+GO
+
+INSERT INTO OSOBA(FirstName, LastName) VALUES('Bo¿ydar', 'Kowalski');
+INSERT INTO OSOBA(FirstName, LastName) VALUES('Jan', 'Malinowski');
+INSERT INTO OSOBA(FirstName, LastName) VALUES('Adrian', 'Czuchaj');
+GO
+
+SELECT * FROM OSOBA
+GO
+
+SELECT FirstName, LastName FROM OSOBA WHERE ID = 2
+GO
