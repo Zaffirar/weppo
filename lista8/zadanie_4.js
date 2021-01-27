@@ -1,3 +1,4 @@
+//using database form zadanie_4.sql
 var mssql = require('mssql');
 async function main() {
     var conn = new mssql.ConnectionPool(

@@ -57,5 +57,5 @@ async function insert_autogen() {
         console.log(err);
     }
 }
-insert_sekwencja();
-//insert_autogen();
+insert_sekwencja(); //using first database from zadanie_1.sql
+//insert_autogen(); //using second database from zadanie_1.sql
